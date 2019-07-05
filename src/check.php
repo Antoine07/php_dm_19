@@ -21,7 +21,6 @@ if ( !empty($_POST) ) {
 
     if (!$sanitize['firstname']) {
         $_SESSION['errors']['firstname'] = 'your firstname is invalid';
-
         $error = true;
     }
 
@@ -40,9 +39,7 @@ if ( !empty($_POST) ) {
 
         header('Location: ../app.php');
         exit;
-    }
-
-    else{
+    }else{
         $_SESSION['flashMessage'] = 'Super';
         $_SESSION['user'] = $sanitize['firstname'];
 
@@ -51,7 +48,9 @@ if ( !empty($_POST) ) {
     }
 }
 
-
+/**
+* Voici une idée pour traiter le cas du retour à la page d'accueil TODO
+*/
 if( !empty($_GET)) {
     $_SESSION['flashMessage'] = "De retour sur la page d'accueil !";
     session_unset();
